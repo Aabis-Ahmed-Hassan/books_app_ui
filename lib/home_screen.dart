@@ -3,50 +3,77 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
-  List bookImageAddress = [
+  List popularBookImageAddress = [
     'assets/book_1.png',
     'assets/book_2.png',
     'assets/book_2.png'
   ];
-  List bookTitle = ['Fashionopolis', 'The Physics Book', 'Calligraphy'];
-  List bookWriter = ['Dana Thomas', 'Clifford A. Pickover', 'June & Lucy'];
+  List popularBookTitle = ['Fashionopolis', 'The Physics Book', 'Calligraphy'];
+  List popularBookWriter = [
+    'Dana Thomas',
+    'Clifford A. Pickover',
+    'June & Lucy'
+  ];
+
+  List newestBookImageAddress = [
+    'assets/newest.png',
+    'assets/newest.png',
+    'assets/newest.png'
+  ];
+  List newestBookTitle = [
+    'Yves Saint Laurent',
+    'Yves Saint Laurent',
+    'Yves Saint Laurent'
+  ];
+  List newestBookWriter = [
+    'Suzy Menkes',
+    'Suzy Menkes',
+    'Suzy Menkes',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color(0xff3E4648),
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const CircleAvatar(
-                backgroundImage: AssetImage('assets/logo.png'),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.025,
-              ),
-              const Text(
-                'Unlock Your Potential',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Color(0xffCBAC78),
-                ),
-              ),
-            ],
-          ),
-          centerTitle: false,
-          actions: [
-            GestureDetector(
-              onTap: () {},
-              child: const CircleAvatar(
-                backgroundImage: AssetImage('assets/profile_picture.png'),
+      backgroundColor: Color(0xff3E4648),
+      appBar: AppBar(
+        backgroundColor: const Color(0xff3E4648),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const CircleAvatar(
+              backgroundImage: AssetImage('assets/logo.png'),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.025,
+            ),
+            const Text(
+              'Unlock Your Potential',
+              style: TextStyle(
+                fontSize: 16,
+                color: Color(0xffCBAC78),
               ),
             ),
-            const mySizedBoxForWidth(),
           ],
         ),
-        body: SingleChildScrollView(
+        centerTitle: false,
+        actions: [
+          GestureDetector(
+            onTap: () {},
+            child: const CircleAvatar(
+              backgroundImage: AssetImage('assets/profile_picture.png'),
+            ),
+          ),
+          const mySizedBoxForWidth(),
+        ],
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+        ),
+        child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Column(
@@ -113,19 +140,20 @@ class HomeScreen extends StatelessWidget {
                                       // width: 160,
                                       fit: BoxFit.fitWidth,
                                       image: AssetImage(
-                                        bookImageAddress[index].toString(),
+                                        popularBookImageAddress[index]
+                                            .toString(),
                                       ),
                                     ),
                                     const mySizedBoxForHeight(),
                                     Text(
-                                      bookTitle[index].toString(),
+                                      popularBookTitle[index].toString(),
                                       style: const TextStyle(
                                           fontSize: 17,
                                           color: Color(0xff3C3C43),
                                           fontWeight: FontWeight.w600),
                                     ),
                                     Text(
-                                      bookWriter[index].toString(),
+                                      popularBookWriter[index].toString(),
                                       style: const TextStyle(
                                           fontSize: 12,
                                           color: Color(0xff06070D),
@@ -146,55 +174,69 @@ class HomeScreen extends StatelessWidget {
                       fontWeight: FontWeight.w600),
                 ),
                 const mySizedBoxForHeight(),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image(
-                      height: 150,
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/newest.png'),
-                    ),
-                    mySizedBoxForWidth(),
-                    mySizedBoxForWidth(),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        mySizedBoxForHeight(),
-                        Text(
-                          'Yves Saint Laurent',
-                          style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xff3C3C43),
+                Column(
+                    children: List.generate(
+                  3,
+                  (index) => Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image(
+                            height: 150,
+                            fit: BoxFit.cover,
+                            image: AssetImage(newestBookImageAddress[index]),
                           ),
-                        ),
-                        Text(
-                          'Suzy Menkes',
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xff06070D),
+                          mySizedBoxForWidth(),
+                          mySizedBoxForWidth(),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              mySizedBoxForHeight(),
+                              Text(
+                                newestBookTitle[index],
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xff3C3C43),
+                                ),
+                              ),
+                              Text(
+                                newestBookWriter[index],
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xff06070D),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
-                    ),
-                    Expanded(
-                        child: Column(
-                      children: [
-                        mySizedBoxForHeight(),
-                        Align(
-                            alignment: Alignment.topRight,
-                            child: Icon(Icons.save)),
-                      ],
-                    ))
-                  ],
-                ),
+                          Expanded(
+                            child: Column(
+                              children: [
+                                mySizedBoxForHeight(),
+                                Align(
+                                    alignment: Alignment.topRight,
+                                    child: Icon(Icons.save)),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.025,
+                      )
+                    ],
+                  ),
+                )),
               ],
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
 
