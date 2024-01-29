@@ -33,6 +33,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height * 1;
+    var width = MediaQuery.of(context).size.width * 1;
+
     return Scaffold(
       backgroundColor: Color(0xff3E4648),
       appBar: AppBar(
@@ -41,11 +44,22 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const CircleAvatar(
-              backgroundImage: AssetImage('assets/logo.png'),
+            Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 15,
+                    spreadRadius: 0,
+                    color: Colors.black38,
+                  ),
+                ],
+              ),
+              child: const CircleAvatar(
+                backgroundImage: AssetImage('assets/logo.png'),
+              ),
             ),
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.025,
+              width: width * 0.025,
             ),
             const Text(
               'Unlock Your Potential',
@@ -64,7 +78,9 @@ class HomeScreen extends StatelessWidget {
               backgroundImage: AssetImage('assets/profile_picture.png'),
             ),
           ),
-          const mySizedBoxForWidth(),
+          SizedBox(
+            width: width * 0.03,
+          )
         ],
       ),
       body: Container(
@@ -75,20 +91,24 @@ class HomeScreen extends StatelessWidget {
         ),
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal: width * 0.03),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const mySizedBoxForHeight(),
-                const Row(
+                SizedBox(
+                  height: height * 0.025,
+                ),
+                Row(
                   children: [
                     Icon(
                       Icons.arrow_back,
                       size: 24,
                       color: Color(0xff1C1B1F),
                     ),
-                    mySizedBoxForWidth(),
+                    SizedBox(
+                      width: width * 0.025,
+                    ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -113,7 +133,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                const mySizedBoxForHeight(),
+                SizedBox(
+                  height: height * 0.025,
+                ),
                 const Text(
                   'Popular Choice',
                   style: TextStyle(
@@ -122,7 +144,9 @@ class HomeScreen extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                const mySizedBoxForHeight(),
+                SizedBox(
+                  height: height * 0.025,
+                ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -144,7 +168,9 @@ class HomeScreen extends StatelessWidget {
                                             .toString(),
                                       ),
                                     ),
-                                    const mySizedBoxForHeight(),
+                                    SizedBox(
+                                      height: height * 0.025,
+                                    ),
                                     Text(
                                       popularBookTitle[index].toString(),
                                       style: const TextStyle(
@@ -165,7 +191,9 @@ class HomeScreen extends StatelessWidget {
                             )),
                   ),
                 ),
-                const mySizedBoxForHeight(),
+                SizedBox(
+                  height: height * 0.025,
+                ),
                 const Text(
                   'Newest',
                   style: TextStyle(
@@ -173,7 +201,9 @@ class HomeScreen extends StatelessWidget {
                       color: Color(0xff3C3C43),
                       fontWeight: FontWeight.w600),
                 ),
-                const mySizedBoxForHeight(),
+                SizedBox(
+                  height: height * 0.025,
+                ),
                 Column(
                     children: List.generate(
                   3,
@@ -188,13 +218,19 @@ class HomeScreen extends StatelessWidget {
                             fit: BoxFit.cover,
                             image: AssetImage(newestBookImageAddress[index]),
                           ),
-                          mySizedBoxForWidth(),
-                          mySizedBoxForWidth(),
+                          SizedBox(
+                            width: width * 0.025,
+                          ),
+                          SizedBox(
+                            width: width * 0.025,
+                          ),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              mySizedBoxForHeight(),
+                              SizedBox(
+                                height: height * 0.025,
+                              ),
                               Text(
                                 newestBookTitle[index],
                                 style: TextStyle(
@@ -216,7 +252,9 @@ class HomeScreen extends StatelessWidget {
                           Expanded(
                             child: Column(
                               children: [
-                                mySizedBoxForHeight(),
+                                SizedBox(
+                                  height: height * 0.025,
+                                ),
                                 Align(
                                     alignment: Alignment.topRight,
                                     child: Icon(Icons.save)),
@@ -226,7 +264,7 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.025,
+                        height: height * 0.025,
                       )
                     ],
                   ),
@@ -236,28 +274,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class mySizedBoxForHeight extends StatelessWidget {
-  const mySizedBoxForHeight({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.025,
-    );
-  }
-}
-
-class mySizedBoxForWidth extends StatelessWidget {
-  const mySizedBoxForWidth({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.025,
     );
   }
 }

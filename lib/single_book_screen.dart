@@ -5,6 +5,9 @@ class SingleBookScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height * 1;
+    var width = MediaQuery.of(context).size.width * 1;
+
     return Scaffold(
         backgroundColor: Color(0xff3E4648),
         appBar: AppBar(
@@ -13,11 +16,22 @@ class SingleBookScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const CircleAvatar(
-                backgroundImage: AssetImage('assets/logo.png'),
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 15,
+                      spreadRadius: 0,
+                      color: Colors.black38,
+                    ),
+                  ],
+                ),
+                child: const CircleAvatar(
+                  backgroundImage: AssetImage('assets/logo.png'),
+                ),
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.025,
+                width: width * 0.025,
               ),
               const Text(
                 'Unlock Your Potential',
@@ -37,7 +51,7 @@ class SingleBookScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.025,
+              width: width * 0.03,
             )
           ],
         ),
@@ -51,22 +65,24 @@ class SingleBookScreen extends StatelessWidget {
           ),
           child: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * 0.03),
+              padding: EdgeInsets.symmetric(horizontal: width * 0.03),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.025,
+                    height: height * 0.025,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Icon(Icons.arrow_back),
+                      Icon(
+                        Icons.arrow_back,
+                        color: Color(0xff1C1B1F),
+                      ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.height * 0.02,
+                        width: height * 0.02,
                       ),
                       Text(
                         'The Physics Book',
@@ -79,18 +95,18 @@ class SingleBookScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.035,
+                    height: height * 0.035,
                   ),
                   Center(
                     child: Image(
-                      height: MediaQuery.of(context).size.height * 0.35,
+                      height: height * 0.35,
                       image: AssetImage(
                         'assets/book_2.png',
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.04,
+                    height: height * 0.04,
                   ),
                   Text(
                     'The Physics Book',
@@ -101,7 +117,7 @@ class SingleBookScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.0075,
+                    height: height * 0.0075,
                   ),
                   Text(
                     'Clifford A. Pickover',
@@ -112,7 +128,7 @@ class SingleBookScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.0075,
+                    height: height * 0.0075,
                   ),
                   Text(
                     '\$12.32',
@@ -122,7 +138,7 @@ class SingleBookScreen extends StatelessWidget {
                         color: Color(0xff3C3C43)),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.01,
+                    height: height * 0.01,
                   ),
                   Text(
                     'A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion.',
@@ -133,7 +149,7 @@ class SingleBookScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.03,
+                    height: height * 0.03,
                   ),
                   Container(
                     height: 56,
