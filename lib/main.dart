@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:task_project/home_screen.dart';
+import 'package:task_project/Cart.dart';
+//For Device Preview
 
-import 'package:device_preview/device_preview.dart';
+// void main() {
+//
+//
+//   runApp(
+//     DevicePreview(
+//       enabled: true,
+//       tools: [
+//
+//         ...DevicePreview.defaultTools,
+//       ],
+//       builder: (context)=>MyApp(),
+//     )
+//   );
+//
+//
+// }
+
 void main() {
-
-
-  runApp(
-    DevicePreview(
-      enabled: true,
-      tools: [
-
-        ...DevicePreview.defaultTools,
-      ],
-      builder: (context)=>MyApp(),
-    )
-  );
-
-
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: Cart(),
     );
   }
 }
