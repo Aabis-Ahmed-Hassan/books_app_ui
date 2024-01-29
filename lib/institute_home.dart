@@ -21,12 +21,12 @@ class InstituteHome extends StatelessWidget {
   ];
 
   var quickMenuContainerColors = [
-    Color(0xff53B175),
-    Color(0xffF8A44C),
-    Color(0xffF7A593),
-    Color(0xffD3B0E0),
-    Color(0xffFDE598),
-    Color(0xffB7DFF5),
+    const Color(0xff53B175),
+    const Color(0xffF8A44C),
+    const Color(0xffF7A593),
+    const Color(0xffD3B0E0),
+    const Color(0xffFDE598),
+    const Color(0xffB7DFF5),
   ];
 
   @override
@@ -113,7 +113,7 @@ class InstituteHome extends StatelessWidget {
                 ),
               ),
               ClipRRect(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(15),
                   topRight: Radius.circular(15),
                 ),
@@ -132,7 +132,7 @@ class InstituteHome extends StatelessWidget {
                           SizedBox(
                             width: width * 0.03,
                           ),
-                          Text(
+                          const Text(
                             'Quick Menu',
                             style: TextStyle(
                               fontSize: 17,
@@ -181,7 +181,7 @@ class InstituteHome extends StatelessWidget {
                                   ),
                                   Text(
                                     quickMenuTitle[index],
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 13,
                                       color: Color(0xff3C3C43),
