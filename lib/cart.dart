@@ -26,7 +26,7 @@ class _CartState extends State<Cart> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 boxShadow: [
                   BoxShadow(
                     blurRadius: 15,
@@ -117,7 +117,7 @@ class _CartState extends State<Cart> {
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
                         width: 1,
-                        color: Color(0xffEBEBEB),
+                        color: const Color(0xffEBEBEB),
                       )),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -169,7 +169,7 @@ class _CartState extends State<Cart> {
                       Expanded(
                         child: Column(
                           children: [
-                            Row(
+                            const Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Icon(
@@ -192,10 +192,10 @@ class _CartState extends State<Cart> {
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: Color(0xffF2F2F2),
+                                      color: const Color(0xffF2F2F2),
                                       borderRadius: BorderRadius.circular(3),
                                     ),
-                                    child: Center(
+                                    child: const Center(
                                       child: Icon(
                                         Icons.remove,
                                         color: Colors.black,
@@ -207,7 +207,7 @@ class _CartState extends State<Cart> {
                                   child: Center(
                                     child: Text(
                                       product_1_quantity.toString(),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           color: Color(0xff3C3C43),
                                           fontSize: 12,
                                           fontWeight: FontWeight.w600),
@@ -221,10 +221,10 @@ class _CartState extends State<Cart> {
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: Color(0xffF2F2F2),
+                                      color: const Color(0xffF2F2F2),
                                       borderRadius: BorderRadius.circular(3),
                                     ),
-                                    child: Center(
+                                    child: const Center(
                                       child: Icon(
                                         Icons.add,
                                         color: Colors.black,
@@ -253,7 +253,7 @@ class _CartState extends State<Cart> {
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
                         width: 1,
-                        color: Color(0xffEBEBEB),
+                        color: const Color(0xffEBEBEB),
                       )),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -305,7 +305,7 @@ class _CartState extends State<Cart> {
                       Expanded(
                         child: Column(
                           children: [
-                            Row(
+                            const Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Icon(
@@ -328,10 +328,10 @@ class _CartState extends State<Cart> {
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: Color(0xffF2F2F2),
+                                      color: const Color(0xffF2F2F2),
                                       borderRadius: BorderRadius.circular(3),
                                     ),
-                                    child: Center(
+                                    child: const Center(
                                       child: Icon(
                                         Icons.remove,
                                         color: Colors.black,
@@ -343,7 +343,7 @@ class _CartState extends State<Cart> {
                                   child: Center(
                                     child: Text(
                                       product_2_quantity.toString(),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           color: Color(0xff3C3C43),
                                           fontSize: 12,
                                           fontWeight: FontWeight.w600),
@@ -357,10 +357,10 @@ class _CartState extends State<Cart> {
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: Color(0xffF2F2F2),
+                                      color: const Color(0xffF2F2F2),
                                       borderRadius: BorderRadius.circular(3),
                                     ),
-                                    child: Center(
+                                    child: const Center(
                                       child: Icon(
                                         Icons.add,
                                         color: Colors.black,
@@ -386,12 +386,12 @@ class _CartState extends State<Cart> {
                       horizontal: width * 0.03, vertical: height * 0.01),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    color: Color(
+                    color: const Color(
                       0xffF7F7F7,
                     ),
                   ),
                   child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'Add a vouchar',
                       border: InputBorder.none,
                     ),
@@ -400,7 +400,7 @@ class _CartState extends State<Cart> {
                 SizedBox(
                   height: height * 0.025,
                 ),
-                Text(
+                const Text(
                   'Cart total',
                   style: TextStyle(
                     fontSize: 19,
@@ -414,7 +414,7 @@ class _CartState extends State<Cart> {
                   height: height * 0.025,
                 ),
 
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -435,7 +435,7 @@ class _CartState extends State<Cart> {
                     ),
                   ],
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -456,7 +456,7 @@ class _CartState extends State<Cart> {
                     ),
                   ],
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -480,7 +480,7 @@ class _CartState extends State<Cart> {
                 SizedBox(
                   height: height * 0.02,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -508,10 +508,10 @@ class _CartState extends State<Cart> {
                 Container(
                   height: 56,
                   decoration: BoxDecoration(
-                    color: Color(0xffCBAC78),
+                    color: const Color(0xffCBAC78),
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text('Add to cart'),
                   ),
                 )

@@ -9,7 +9,7 @@ class SingleBookScreen extends StatelessWidget {
     var width = MediaQuery.of(context).size.width * 1;
 
     return Scaffold(
-        backgroundColor: Color(0xff3E4648),
+        backgroundColor: const Color(0xff3E4648),
         appBar: AppBar(
           backgroundColor: const Color(0xff3E4648),
           title: Row(
@@ -17,7 +17,7 @@ class SingleBookScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 15,
@@ -56,7 +56,7 @@ class SingleBookScreen extends StatelessWidget {
           ],
         ),
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15),
@@ -77,14 +77,14 @@ class SingleBookScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.arrow_back,
                         color: Color(0xff1C1B1F),
                       ),
                       SizedBox(
                         width: height * 0.02,
                       ),
-                      Text(
+                      const Text(
                         'The Physics Book',
                         style: TextStyle(
                           fontSize: 22,
@@ -100,7 +100,7 @@ class SingleBookScreen extends StatelessWidget {
                   Center(
                     child: Image(
                       height: height * 0.35,
-                      image: AssetImage(
+                      image: const AssetImage(
                         'assets/book_2.png',
                       ),
                     ),
@@ -108,7 +108,7 @@ class SingleBookScreen extends StatelessWidget {
                   SizedBox(
                     height: height * 0.04,
                   ),
-                  Text(
+                  const Text(
                     'The Physics Book',
                     style: TextStyle(
                       fontSize: 27,
@@ -119,7 +119,7 @@ class SingleBookScreen extends StatelessWidget {
                   SizedBox(
                     height: height * 0.0075,
                   ),
-                  Text(
+                  const Text(
                     'Clifford A. Pickover',
                     style: TextStyle(
                       fontSize: 14,
@@ -130,7 +130,7 @@ class SingleBookScreen extends StatelessWidget {
                   SizedBox(
                     height: height * 0.0075,
                   ),
-                  Text(
+                  const Text(
                     '\$12.32',
                     style: TextStyle(
                         fontSize: 22,
@@ -140,7 +140,7 @@ class SingleBookScreen extends StatelessWidget {
                   SizedBox(
                     height: height * 0.01,
                   ),
-                  Text(
+                  const Text(
                     'A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion.',
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
@@ -154,10 +154,10 @@ class SingleBookScreen extends StatelessWidget {
                   Container(
                     height: 56,
                     decoration: BoxDecoration(
-                      color: Color(0xffCBAC78),
+                      color: const Color(0xffCBAC78),
                       borderRadius: BorderRadius.circular(16),
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text('Add to cart'),
                     ),
                   )

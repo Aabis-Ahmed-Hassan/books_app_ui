@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
     var width = MediaQuery.of(context).size.width * 1;
 
     return Scaffold(
-      backgroundColor: Color(0xff3E4648),
+      backgroundColor: const Color(0xff3E4648),
       appBar: AppBar(
         backgroundColor: const Color(0xff3E4648),
         title: Row(
@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 boxShadow: [
                   BoxShadow(
                     blurRadius: 15,
@@ -84,7 +84,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15), topRight: Radius.circular(15)),
@@ -101,7 +101,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.arrow_back,
                       size: 24,
                       color: Color(0xff1C1B1F),
@@ -109,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(
                       width: width * 0.025,
                     ),
-                    Column(
+                    const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -233,7 +233,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                               Text(
                                 newestBookTitle[index],
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 17,
                                   fontWeight: FontWeight.w600,
                                   color: Color(0xff3C3C43),
@@ -241,7 +241,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                               Text(
                                 newestBookWriter[index],
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w400,
                                   color: Color(0xff06070D),
@@ -255,7 +255,7 @@ class HomeScreen extends StatelessWidget {
                                 SizedBox(
                                   height: height * 0.025,
                                 ),
-                                Align(
+                                const Align(
                                     alignment: Alignment.topRight,
                                     child: Icon(Icons.save)),
                               ],
