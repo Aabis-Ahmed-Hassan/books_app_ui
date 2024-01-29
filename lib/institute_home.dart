@@ -162,7 +162,7 @@ class InstituteHome extends StatelessWidget {
                               width: width * 0.35,
                               height: height * 0.35,
                               decoration: BoxDecoration(
-                                color: quickMenuContainerColors[index],
+                                color: Colors.white,
                                 borderRadius: BorderRadius.circular(15),
                               ),
                               child: Column(
