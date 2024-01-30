@@ -2,33 +2,6 @@ import 'package:flutter/material.dart';
 
 class ParentStudentBooks extends StatelessWidget {
   ParentStudentBooks({super.key});
-  List popularBookImageAddress = [
-    'assets/book_1.png',
-    'assets/book_2.png',
-    'assets/book_2.png'
-  ];
-  List popularBookTitle = ['Fashionopolis', 'The Physics Book', 'Calligraphy'];
-  List popularBookWriter = [
-    'Dana Thomas',
-    'Clifford A. Pickover',
-    'June & Lucy'
-  ];
-
-  List newestBookImageAddress = [
-    'assets/newest.png',
-    'assets/newest.png',
-    'assets/newest.png'
-  ];
-  List newestBookTitle = [
-    'Yves Saint Laurent',
-    'Yves Saint Laurent',
-    'Yves Saint Laurent'
-  ];
-  List newestBookWriter = [
-    'Suzy Menkes',
-    'Suzy Menkes',
-    'Suzy Menkes',
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -88,134 +61,192 @@ class ParentStudentBooks extends StatelessWidget {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15), topRight: Radius.circular(15)),
         ),
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * 0.015),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: height * 0.025,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: width * 0.03),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: height * 0.025,
+              ),
+              Row(
+                children: [
+                  const Icon(
+                    Icons.arrow_back,
+                    size: 24,
+                    color: Color(0xff1C1B1F),
+                  ),
+                  SizedBox(
+                    width: width * 0.025,
+                  ),
+                  const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'New Books',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xff171721),
+                          fontSize: 22,
+                        ),
+                      ),
+                      Text(
+                        'Select book from below',
+                        style: TextStyle(
+                          color: Color(0xff3C3C43),
+                          fontSize: 15,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: height * 0.025,
+              ),
+              const Text(
+                'Popular Choice',
+                style: TextStyle(
+                  color: Color(0xff3C3C43),
+                  fontSize: 19,
+                  fontWeight: FontWeight.w600,
                 ),
-                Row(
+              ),
+              SizedBox(
+                height: height * 0.025,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: height * 0.03),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Icon(
-                      Icons.arrow_back,
-                      size: 24,
-                      color: Color(0xff1C1B1F),
+                    const Image(
+                      height: 100,
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/newest.png'),
                     ),
                     SizedBox(
-                      width: width * 0.025,
+                      width: width * 0.050,
                     ),
                     const Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'New Books',
+                          'Yves Saint Laurent',
                           style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            color: Color(0xff171721),
-                            fontSize: 22,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xff3C3C43),
                           ),
                         ),
                         Text(
-                          'Select book from below',
+                          'Suzy Menkes ',
                           style: TextStyle(
-                            color: Color(0xff3C3C43),
-                            fontSize: 15,
+                            fontSize: 12,
                             fontWeight: FontWeight.w400,
+                            color: Color(0xff06070D),
                           ),
                         ),
                       ],
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: height * 0.025,
-                ),
-                const Text(
-                  'Popular Choice',
-                  style: TextStyle(
-                    color: Color(0xff3C3C43),
-                    fontSize: 19,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                SizedBox(
-                  height: height * 0.025,
-                ),
-                SizedBox(
-                  height: height * 0.025,
-                ),
-                Column(
-                    children: List.generate(
-                  3,
-                  (index) => Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image(
-                            height: 150,
-                            fit: BoxFit.cover,
-                            image: AssetImage(newestBookImageAddress[index]),
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: height * 0.03),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Image(
+                      height: 100,
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/book_2.png'),
+                    ),
+                    SizedBox(
+                      width: width * 0.050,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'The Book of Signs',
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xff3C3C43),
                           ),
-                          SizedBox(
-                            width: width * 0.025,
+                        ),
+                        const Text(
+                          'Rudolf Koch ',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xff06070D),
                           ),
-                          SizedBox(
-                            width: width * 0.025,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: height * 0.025,
-                              ),
-                              Text(
-                                newestBookTitle[index],
-                                style: const TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w600,
-                                  color: Color(0xff3C3C43),
-                                ),
-                              ),
-                              Text(
-                                newestBookWriter[index],
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: Color(0xff06070D),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Expanded(
-                            child: Column(
-                              children: [
-                                SizedBox(
-                                  height: height * 0.025,
-                                ),
-                                const Align(
-                                    alignment: Alignment.topRight,
-                                    child: Icon(Icons.save)),
-                              ],
+                        ),
+                        SizedBox(
+                          height: height * 0.01,
+                        ),
+                        const Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: Color(0xffFFC41F),
                             ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: height * 0.025,
-                      )
-                    ],
+                            Icon(
+                              Icons.star,
+                              color: Color(0xffFFC41F),
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Color(0xffFFC41F),
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Color(0xffFFC41F),
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Color(0xffEDEDEF),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const Spacer(),
+              Container(
+                height: height * 0.075,
+                decoration: BoxDecoration(
+                  color: const Color(0xffCBAC78),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: const Center(
+                  child: Text(
+                    'Buy Books',
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
                   ),
-                )),
-              ],
-            ),
+                ),
+              ),
+              SizedBox(
+                height: height * 0.05,
+              ),
+            ],
           ),
         ),
       ),
