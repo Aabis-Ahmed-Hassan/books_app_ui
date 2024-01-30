@@ -29,8 +29,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // home: InstituteHome(),
       home: Students(),
+      // home: Students(),
     );
   }
 }
