@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'cart.dart';
+import 'package:task_project/task%202/students.dart';
 //For Device Preview
 
 // void main() {
@@ -30,8 +29,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-        // home: InstituteHome(),
-        home: Cart());
+      // home: InstituteHome(),
+      home: Students(),
+    );
   }
 }
