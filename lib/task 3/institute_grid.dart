@@ -16,15 +16,6 @@ class InstituteGrid extends StatelessWidget {
     'assets/classes.png',
   ];
 
-  var quickMenuContainerColors = [
-    const Color(0xff53B175),
-    const Color(0xffF8A44C),
-    const Color(0xffF7A593),
-    const Color(0xffD3B0E0),
-    const Color(0xffFDE598),
-    const Color(0xffB7DFF5),
-  ];
-
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height * 1;
@@ -66,101 +57,104 @@ class InstituteGrid extends StatelessWidget {
           ),
           centerTitle: false,
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: height * 0.020,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: height * 0.020,
+            ),
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
               ),
-              ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
-                ),
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: width * 0.03),
-                  color: Colors.white,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: height * 0.025,
-                      ),
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: width * 0.03,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: width * 0.03),
+                color: Colors.white,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: height * 0.025,
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: width * 0.03,
+                        ),
+                        const Text(
+                          'Quick Menu',
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xff3C3C43),
                           ),
-                          const Text(
-                            'Quick Menu',
-                            style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w600,
-                              color: Color(0xff3C3C43),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: height * 0.025,
+                    ),
+                    GridView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: 4,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2),
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: EdgeInsets.only(
+                              left: width * 0.025,
+                              right: width * 0.025,
+                              bottom: height * 0.025),
+                          child: Container(
+                            width: width * 0.35,
+                            height: height * 0.35,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image(
+                                  height: 65,
+                                  fit: BoxFit.fitWidth,
+                                  image: AssetImage(
+                                    quickMenuImage[index],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: height * 0.02,
+                                ),
+                                Text(
+                                  quickMenuTitle[index],
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 13,
+                                    color: Color(0xff3C3C43),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: height * 0.025,
-                      ),
-                      GridView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: 4,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2),
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: EdgeInsets.only(
-                                left: width * 0.025,
-                                right: width * 0.025,
-                                bottom: height * 0.025),
-                            child: Container(
-                              width: width * 0.35,
-                              height: height * 0.35,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image(
-                                    height: 65,
-                                    fit: BoxFit.fitWidth,
-                                    image: AssetImage(
-                                      quickMenuImage[index],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: height * 0.02,
-                                  ),
-                                  Text(
-                                    quickMenuTitle[index],
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 13,
-                                      color: Color(0xff3C3C43),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ],
-                  ),
+                        );
+                      },
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+            Expanded(
+              child: Container(
+                color: Colors.white,
+              ),
+            ),
+          ],
         ));
   }
 }
