@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_project/task%202/parent_student_books.dart';
+
+import 'task 3/institute_grid.dart';
+
 //For Device Preview
 
 // void main() {
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ParentStudentBooks(),
+      home: InstituteGrid(),
       // home: MarkAttendance(),
     );
   }
